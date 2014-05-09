@@ -1,0 +1,32 @@
+@import "_settings"
+
+/**
+ * @name		box-sizing
+ * @values	 	content-box | padding-box | border-box | inherit
+ * @default		content-box
+ * @see			http://www.w3.org/TR/css3-ui/#box-sizing
+ *				http://caniuse.com/#feat=css3-boxsizing
+ */
+prefix-box-sizing()
+	$property = called-from[0]
+
+	unsupported-below('ie', 8)
+	unsupported-below('opera', 9.5)
+
+	if prefix-below('chrome', 10) || prefix-below('safari', 5.1)
+		$webkit = true
+	if prefix-below('firefox', 29)
+		$moz = true
+
+	if $support-mobile
+		if prefix-below('mobile-safari', 5.0) || prefix-below('mobile-android', 4.0) || prefix-below('mobile-blackberry', 10.0)
+			$webkit = true
+		if prefix-below('mobile-firefox')
+			$moz = true
+
+	-webkit-{$property} arguments if $webkit is defined
+	-moz-{$property} arguments if $moz is defined
+	{$property} arguments
+
+box-sizing()
+	prefix-box-sizing(arguments)

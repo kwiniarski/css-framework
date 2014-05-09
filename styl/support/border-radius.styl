@@ -1,0 +1,19 @@
+@import "_settings"
+
+/**
+ * @name		border-radius
+ * @values	 	[ <length> | <percentage> ]{1,2}
+ * @default		0
+ * @see			http://www.w3.org/TR/css3-background/#the-border-radius
+ *				http://caniuse.com/#search=border-radius
+ */
+border-radius()
+	unsupported-below('ie', 9)
+	unsupported-below('opera', 10.5)
+
+	if $support-chrome < 5 || $support-safari < 5
+		-webkit-border-radius arguments
+	if $support-firefox < 4
+		-moz-border-radius arguments
+
+	border-radius arguments

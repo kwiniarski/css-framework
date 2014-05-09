@@ -1,0 +1,171 @@
+/**
+ * css-framework, version: 0.0.0
+ * Copyright 2014 Krzysztof Winiarski
+ */
+.row {
+  width: 1180px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+/**zoom: 1;*/
+}
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+.c,
+[class*="c-"],
+.content,
+.sidebar {
+  display: inline;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 91px;
+  margin-left: 8px;
+}
+.c:first-child,
+[class*="c-"]:first-child,
+.content:first-child,
+.sidebar:first-child {
+  margin-left: 0;
+}
+.s-1 {
+  margin-left: 107px;
+}
+.s-1:first-child {
+  margin-left: 99px;
+}
+.s-2 {
+  margin-left: 206px;
+}
+.s-2:first-child {
+  margin-left: 198px;
+}
+.s-3 {
+  margin-left: 305px;
+}
+.s-3:first-child {
+  margin-left: 297px;
+}
+.s-4 {
+  margin-left: 404px;
+}
+.s-4:first-child {
+  margin-left: 396px;
+}
+.s-5 {
+  margin-left: 503px;
+}
+.s-5:first-child {
+  margin-left: 495px;
+}
+.s-6 {
+  margin-left: 602px;
+}
+.s-6:first-child {
+  margin-left: 594px;
+}
+.s-7 {
+  margin-left: 701px;
+}
+.s-7:first-child {
+  margin-left: 693px;
+}
+.s-8 {
+  margin-left: 800px;
+}
+.s-8:first-child {
+  margin-left: 792px;
+}
+.s-9 {
+  margin-left: 899px;
+}
+.s-9:first-child {
+  margin-left: 891px;
+}
+.s-10 {
+  margin-left: 998px;
+}
+.s-10:first-child {
+  margin-left: 990px;
+}
+.s-11 {
+  margin-left: 1097px;
+}
+.s-11:first-child {
+  margin-left: 1089px;
+}
+.c-1 {
+  width: 91px;
+}
+.c-2 {
+  width: 190px;
+}
+.c-3,
+.sidebar {
+  width: 289px;
+}
+.c-4 {
+  width: 388px;
+}
+.c-5 {
+  width: 487px;
+}
+.c-6 {
+  width: 586px;
+}
+.c-7 {
+  width: 685px;
+}
+.c-8,
+.content {
+  width: 784px;
+}
+.c-9 {
+  width: 883px;
+}
+.c-10 {
+  width: 982px;
+}
+.c-11 {
+  width: 1081px;
+}
+.c-12 {
+  width: 1180px;
+}
+.sidebar {
+  margin-left: 107px;
+}
+.sidebar:first-child {
+  margin-left: 99px;
+}
+.bg {
+  background: #ccc;
+  display: block;
+  margin-bottom: 10px;
+}
+.bg [class*="c-"],
+.bg .sidebar,
+.bg .content {
+  background: #999;
+  height: 30px;
+}
+.bg [class*="c-"] [class*="c-"],
+.bg .sidebar [class*="c-"],
+.bg .content [class*="c-"] {
+  background: #666;
+}
+.bg [class*="c-"] [class*="c-"] [class*="c-"],
+.bg .sidebar [class*="c-"] [class*="c-"],
+.bg .content [class*="c-"] [class*="c-"] {
+  background: #333;
+}

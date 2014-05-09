@@ -1,0 +1,27 @@
+@import "grid"
+
+$column-class = "c";
+$gutter-class = "s"
+
+grid()
+
+
+.content
+	column(8)
+
+.sidebar
+	column(3, 1)
+
+
+.bg
+	background #ccc
+	display block
+	margin-bottom 10px
+
+	[class*="c-"], .sidebar, .content
+		background #999
+		height 30px
+		[class*="c-"]
+			background #666
+			[class*="c-"]
+				background #333

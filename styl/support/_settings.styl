@@ -1,0 +1,50 @@
+$support-errors ?= true
+$support-mobile ?= true
+
+$support-ie ?= 8.0						// IE
+$support-chrome ?= 10.0					// Chrome
+$support-safari ?= 6.0					// Safari
+$support-firefox ?= 5.0					// Firefox
+$support-opera ?= 12.0					// Opera
+
+$support-mobile-safari ?= false			// iOS Safari
+$support-mobile-opera ?= false			// Opera Mobile
+$support-mobile-opera-mini ?= false		// Opera Mini
+$support-mobile-android ?= false		// Android Browser
+$support-mobile-blackberry ?= false		// Blackberry Browser
+$support-mobile-ie ?= false				// IE Mobile
+$support-mobile-chrome ?= false			// Chrome for Android
+$support-mobile-firefox ?= 2			// Firefox for Android
+
+$support-ie-name ?= "IE"
+$support-chrome-name ?= "Chrome"
+$support-safari-name ?= "Safari"
+$support-firefox-name ?= "Firefox"
+$support-opera-name ?= "Opera"
+
+$support-mobile-safari-name ?= "iOS Safari"
+$support-mobile-opera-name ?= "Opera Mobile"
+$support-mobile-opera-mini-name ?= "Opera Mini"
+$support-mobile-android-name ?= "Android Browser"
+$support-mobile-blackberry-name ?= "Blackberry Browser"
+$support-mobile-ie-name ?= "IE Mobile"
+$support-mobile-chrome-name ?= "Chrome for Android"
+$support-mobile-firefox-name ?= "Firefox for Android"
+
+unsupported-below($browser, $version)
+	if current-property
+		$property 				= current-property[0]
+		$version-supported 		= lookup('$support-' + $browser)
+		$browser-name 			= lookup('$support-' + $browser + '-name')
+
+		if $support-errors && $version-supported < $version
+			warn('' + $property + ' is supported from ' + $browser-name + ' ' + $version + '+ but support for ' + $version-supported + ' is required')
+
+	else
+		error('unsupported-below() must be used within a property')
+
+prefix-below($browser, $version = 0)
+	$version-supported 			= lookup('$support-' + $browser)
+	$browser-name 				= lookup('$support-' + $browser + '-name')
+
+	$version-supported && (!$version || $version-supported < $version)
