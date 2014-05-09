@@ -1,13 +1,13 @@
 @import "support"
 @import "mixins"
 
-$layout-width = 1180px
-$layout-gutter = 8px
-$layout-columns = 12
+$layout-width ?= 1180px
+$layout-gutter ?= 8px
+$layout-columns ?= 12
 
-$row-class = "row"
-$gutter-class = "shift"
-$column-class = "column"
+$row-class ?= "row"
+$gutter-class ?= "shift"
+$column-class ?= "column"
 
 // Width of single layout column (cell)
 layout-column()
