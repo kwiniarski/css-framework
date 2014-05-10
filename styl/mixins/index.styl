@@ -1,11 +1,14 @@
-@import "support"
+@import "support";
 
-clearfix()
-	if $support-ie < 8
-		*zoom 1
-	&:before, &:after
-		content " "
-		display table
-	&:after
-		clear both
-
+clearfix() {
+	if $support-ie < 8 {
+		*zoom:1;
+	}
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}

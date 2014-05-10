@@ -1,10 +1,20 @@
-@import "layout"
+
 
 $column-class = "c";
-$gutter-class = "s"
+$gutter-class = "s";
+$layout-width = 1180px;
+$layout-gutter = 20px;
+/*$layout-gutter = 8;*/
+
+$base-font = "Source Sans Pro", sans-serif;
+
+@import "layout"
 
 grid()
 
+h1, h2, h3, h4, h5, h5 {
+	font-weight: 100;
+}
 
 .content
 	column(8)
@@ -12,6 +22,9 @@ grid()
 .sidebar
 	column(3, 1)
 
+.wide {
+	background: powderblue;
+}
 
 .bg
 	background #ccc

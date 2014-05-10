@@ -1,0 +1,33 @@
+@import "support";
+
+$base-font ?= sans-serif;
+$base-font-weight ?= normal;
+$base-font-size ?= 14px;
+$base-font-color ?= #000;
+$base-line-height ?= 20px;
+
+$h-size-factor ?= 3.5;
+$h-size-step ?= round(($base-font-size * $h-size-factor - $base-font-size) / 5);
+
+
+$base-font-size-h6 ?= $base-font-size;
+$base-font-size-h5 ?= $base-font-size-h6 + $h-size-step;
+$base-font-size-h4 ?= $base-font-size-h5 + $h-size-step;
+$base-font-size-h3 ?= $base-font-size-h4 + $h-size-step;
+$base-font-size-h2 ?= $base-font-size-h3 + $h-size-step;
+$base-font-size-h1 ?= $base-font-size-h2 + $h-size-step;
+
+
+html {
+	font: $base-font-weight $base-font-size $base-font;
+	color: $base-font-color;
+	/*line-height: em($base-line-height);*/
+}
+
+for $h in 1..6 {
+	h{$h} {
+		$base-size = lookup('$base-font-size-h' + $h);
+		font-size: em($base-size);
+		margin: em(20px, $base-size) auto;
+	}
+}

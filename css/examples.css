@@ -2,6 +2,7 @@
  * css-framework, version: 0.0.0
  * Copyright 2014 Krzysztof Winiarski
  */
+/*$layout-gutter = 8;*/
 /* normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -153,6 +154,7 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 /* 1 */
   padding: 0;
@@ -166,8 +168,6 @@ input[type="search"] {
   -webkit-appearance: textfield;
 /* 1 */
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-/* 2 */
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -199,6 +199,35 @@ td,
 th {
   padding: 0;
 }
+html {
+  font: normal 14px "Source Sans Pro", sans-serif;
+  color: #000;
+/*line-height: em($base-line-height);*/
+}
+h1 {
+  font-size: 3.5em;
+  margin: 0.4082em auto;
+}
+h2 {
+  font-size: 3em;
+  margin: 0.4762em auto;
+}
+h3 {
+  font-size: 2.5em;
+  margin: 0.5714em auto;
+}
+h4 {
+  font-size: 2em;
+  margin: 0.7143em auto;
+}
+h5 {
+  font-size: 1.5em;
+  margin: 0.9524em auto;
+}
+h6 {
+  font-size: 1em;
+  margin: 1.4286em auto;
+}
 .row {
   width: 1180px;
   -moz-box-sizing: border-box;
@@ -214,6 +243,9 @@ th {
 .row:after {
   clear: both;
 }
+.row.wide {
+  width: 100%;
+}
 .c,
 [class*="c-"],
 .content,
@@ -225,8 +257,8 @@ th {
   margin: 0;
   padding: 0;
   border: 0;
-  width: 91px;
-  margin-left: 8px;
+  width: 80px;
+  margin-left: 20px;
 }
 .c:first-child,
 [class*="c-"]:first-child,
@@ -235,114 +267,124 @@ th {
   margin-left: 0;
 }
 .s-1 {
-  margin-left: 107px;
+  margin-left: 120px;
 }
 .s-1:first-child {
-  margin-left: 99px;
+  margin-left: 100px;
 }
 .s-2 {
-  margin-left: 206px;
+  margin-left: 220px;
 }
 .s-2:first-child {
-  margin-left: 198px;
+  margin-left: 200px;
 }
 .s-3 {
-  margin-left: 305px;
+  margin-left: 320px;
 }
 .s-3:first-child {
-  margin-left: 297px;
+  margin-left: 300px;
 }
 .s-4 {
-  margin-left: 404px;
+  margin-left: 420px;
 }
 .s-4:first-child {
-  margin-left: 396px;
+  margin-left: 400px;
 }
 .s-5 {
-  margin-left: 503px;
+  margin-left: 520px;
 }
 .s-5:first-child {
-  margin-left: 495px;
+  margin-left: 500px;
 }
 .s-6 {
-  margin-left: 602px;
+  margin-left: 620px;
 }
 .s-6:first-child {
-  margin-left: 594px;
+  margin-left: 600px;
 }
 .s-7 {
-  margin-left: 701px;
+  margin-left: 720px;
 }
 .s-7:first-child {
-  margin-left: 693px;
+  margin-left: 700px;
 }
 .s-8 {
-  margin-left: 800px;
+  margin-left: 820px;
 }
 .s-8:first-child {
-  margin-left: 792px;
+  margin-left: 800px;
 }
 .s-9 {
-  margin-left: 899px;
+  margin-left: 920px;
 }
 .s-9:first-child {
-  margin-left: 891px;
+  margin-left: 900px;
 }
 .s-10 {
-  margin-left: 998px;
+  margin-left: 1020px;
 }
 .s-10:first-child {
-  margin-left: 990px;
+  margin-left: 1000px;
 }
 .s-11 {
-  margin-left: 1097px;
+  margin-left: 1120px;
 }
 .s-11:first-child {
-  margin-left: 1089px;
+  margin-left: 1100px;
 }
 .c-1 {
-  width: 91px;
+  width: 80px;
 }
 .c-2 {
-  width: 190px;
+  width: 180px;
 }
 .c-3,
 .sidebar {
-  width: 289px;
+  width: 280px;
 }
 .c-4 {
-  width: 388px;
+  width: 380px;
 }
 .c-5 {
-  width: 487px;
+  width: 480px;
 }
 .c-6 {
-  width: 586px;
+  width: 580px;
 }
 .c-7 {
-  width: 685px;
+  width: 680px;
 }
 .c-8,
 .content {
-  width: 784px;
+  width: 780px;
 }
 .c-9 {
-  width: 883px;
+  width: 880px;
 }
 .c-10 {
-  width: 982px;
+  width: 980px;
 }
 .c-11 {
-  width: 1081px;
+  width: 1080px;
 }
 .c-12 {
   width: 1180px;
 }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 100;
+}
 .sidebar {
-  margin-left: 107px;
+  margin-left: 120px;
 }
 .sidebar:first-child {
-  margin-left: 99px;
+  margin-left: 100px;
+}
+.wide {
+  background: #b0e0e6;
 }
 .bg {
   background: #ccc;

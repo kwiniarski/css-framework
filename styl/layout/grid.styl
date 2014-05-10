@@ -1,61 +1,81 @@
-@import "support"
-@import "mixins"
+@import "support";
+@import "mixins";
 
-$layout-width ?= 1180px
-$layout-gutter ?= 8px
-$layout-columns ?= 12
+$layout-width ?= 1180px;
+$layout-gutter ?= 8px;
+$layout-columns ?= 12;
 
-$row-class ?= "row"
-$gutter-class ?= "shift"
-$column-class ?= "column"
+$row-class ?= "row";
+$gutter-class ?= "shift";
+$column-class ?= "column";
 
 // Width of single layout column (cell)
-layout-column()
-	( $layout-width - ( $layout-columns - 1 ) * $layout-gutter ) / $layout-columns
+layout-column() {
+	($layout-width - ($layout-columns - 1) * $layout-gutter) / $layout-columns;
+}
 
 // Width of a column of a specified size
-column-width($columns = 1)
-	( ( layout-column() + $layout-gutter ) * $columns ) - $layout-gutter
+column-width($columns = 1) {
+	((layout-column() + $layout-gutter) * $columns) - $layout-gutter;
+}
 
-gutter-width($columns = 1)
-	column-width($columns + 1) - layout-column() + $layout-gutter
+gutter-width($columns = 1) {
+	(column-width($columns + 1) - layout-column() + $layout-gutter);
+}
 
-column($column = 1, $gutter = 0)
-	@extend .{$column-class}, .{$column-class}-{$column}
-	if $gutter
-		margin-left gutter-width($gutter)
-		&:first-child
-			margin-left gutter-width($gutter) - $layout-gutter
+column($column = 1, $gutter = 0) {
+	@extend .{$column-class}, .{$column-class}-{$column};
+	if $gutter {
+		margin-left: gutter-width($gutter);
+		&:first-child {
+			margin-left: gutter-width($gutter) - $layout-gutter;
+		}
+	}
+}
 
-grid()
-	$columns = arguments ? arguments : (1..$layout-columns)
+grid() {
+	$columns = arguments ? arguments : (1..$layout-columns);
 
-	.{$row-class}
-		width: $layout-width
-		box-sizing: border-box
-		margin: 0 auto
-		padding: 0
-		clearfix()
+	.{$row-class} {
+		width: $layout-width;
+		box-sizing: border-box;
+		margin: 0 auto;
+		padding: 0;
+		clearfix();
 
-	.{$column-class}, {'[class*="' + $column-class + '-"]'}
-		display inline
-		box-sizing border-box
-		float left
-		margin 0
-		padding 0
-		border 0
-		width column-width()
-		margin-left $layout-gutter
-		&:first-child
-			margin-left 0
+		&.wide {
+			width: 100%;
+		}
+	}
 
-	for $column in $columns
-		if $column < $layout-columns
-			&.{$gutter-class}-{$column}
-				margin-left gutter-width($column)
-				&:first-child
-					margin-left gutter-width($column) - $layout-gutter
+	.{$column-class}, {'[class*="' + $column-class + '-"]'} {
+		display: inline;
+		box-sizing: border-box;
+		float: left;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		width: column-width();
+		margin-left: $layout-gutter;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
 
-	for $column in $columns
-		.{$column-class}-{$column}
-			width column-width($column)
+	for $column in $columns {
+		if $column < $layout-columns {
+			&.{$gutter-class}-{$column} {
+				margin-left: gutter-width($column);
+				&:first-child {
+					margin-left: gutter-width($column) - $layout-gutter;
+				}
+			}
+		}
+	}
+
+	for $column in $columns {
+		.{$column-class}-{$column} {
+			width: column-width($column);
+		}
+	}
+}

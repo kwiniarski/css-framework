@@ -1,4 +1,4 @@
-@import "_settings"
+@import "_settings";
 
 /**
  * @name		border-radius
@@ -7,40 +7,51 @@
  * @see			http://www.w3.org/TR/css3-background/#the-border-radius
  *				http://caniuse.com/#search=border-radius
  */
-prefix-border-radius()
-	$property = called-from[0]
+prefix-border-radius() {
+	$property = called-from[0];
 
-	unsupported-below('ie', 9.0)
-	unsupported-below('opera', 10.5)
+	unsupported-below('ie', 9.0);
+	unsupported-below('opera', 10.5);
 
-	if $support-mobile
-		unsupported-below('mobile-opera-mini', 7.0)
-		unsupported-below('mobile-opera', 9.5)
+	if $support-mobile {
+		unsupported-below('mobile-opera-mini', 7.0);
+		unsupported-below('mobile-opera', 9.5);
+	}
 
-	if prefix-below('chrome', 5.0) || prefix-below('safari', 5.0)
-		$webkit = true
-	if prefix-below('firefox', 4.0)
-		$moz = true
+	if prefix-below('chrome', 5.0) || prefix-below('safari', 5.0) {
+		$webkit = true;
+	}
+	if prefix-below('firefox', 4.0) {
+		$moz = true;
+	}
 
-	if $support-mobile
-		if prefix-below('mobile-safari', 4.0) || prefix-below('mobile-android', 2.2)
-			$webkit = true
+	if $support-mobile {
+		if prefix-below('mobile-safari', 4.0) || prefix-below('mobile-android', 2.2) {
+			$webkit = true;
+		}
+	}
 
-	-webkit-{$property} arguments if $webkit is defined
-	-moz-{$property} arguments if $moz is defined
-	{$property} arguments
+	-webkit-{$property} arguments if $webkit is defined;
+	-moz-{$property} arguments if $moz is defined;
+	{$property} arguments;
+}
 
-border-radius()
-	prefix-border-radius(arguments)
+border-radius() {
+	prefix-border-radius(arguments);
+}
 
-border-top-left-radius()
-	prefix-border-radius(arguments)
+border-top-left-radius() {
+	prefix-border-radius(arguments);
+}
 
-border-top-right-radius()
-	prefix-border-radius(arguments)
+border-top-right-radius() {
+	prefix-border-radius(arguments);
+}
 
-border-bottom-right-radius()
-	prefix-border-radius(arguments)
+border-bottom-right-radius() {
+	prefix-border-radius(arguments);
+}
 
-border-bottom-left-radius()
-	prefix-border-radius(arguments)
+border-bottom-left-radius() {
+	prefix-border-radius(arguments);
+}

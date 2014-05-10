@@ -7,7 +7,9 @@
 </head>
 <body>
 
-    <h2 class="row">Columns</h2>
+	<div class="row"><h1>The Grid</h1></div>
+
+    <div class="row"><h2>Columns</h2></div>
     <div class="row bg">
         <div class="c-1"></div>
         <div class="c-1"></div>
@@ -56,7 +58,7 @@
         <div class="c-3"></div>
     </div>
 
-    <h2 class="row">Shifted columns</h2>
+    <div class="row"><h2>Shifted columns</h2></div>
     <div class="row bg">
         <div class="c-1 s-11"></div>
     </div>
@@ -78,7 +80,7 @@
         <div class="c-2"></div>
     </div>
 
-    <h2 class="row">Nested columns</h2>
+    <div class="row"><h2>Nested columns</h2></div>
 
 	<div class="row bg">
 		<div class="c-6">
@@ -106,12 +108,62 @@
 		</div>
 	</div>
 
-	<h2 class="row">Named columns</h2>
+	<div class="row"><h2>Named columns</h2></div>
 
 	<div class="row bg">
 		<div class="content"></div>
 		<div class="sidebar"></div>
 	</div>
+
+	<div class="row wide">
+		<div class="row">
+			<div class="c-4">
+				<h3>Title</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias asperiores delectus
+					doloribus iusto minus modi praesentium quaerat sit unde?</p>
+			</div>
+			<div class="c-4">
+				<h3>Title</h3>
+
+				<p>Blanditiis fuga illum inventore, nihil obcaecati odio repudiandae sint veritatis! Animi,
+					exercitationem facilis hic ipsum libero perspiciatis sapiente soluta veniam?</p>
+			</div>
+			<div class="c-4">
+				<h3>Title</h3>
+
+				<p>Asperiores aut corporis cum ea, earum in itaque laudantium molestiae natus necessitatibus nemo
+					numquam officia porro qui quo rerum, sed.</p>
+			</div>
+		</div>
+	</div>
+
+	<!--.row.wide>.row>.c-3*4>h4>lipsum2^p>lipsum10-->
+	<div class="row wide">
+		<div class="row">
+			<div class="c-3">
+				<h4>Lorem ipsum.</h4>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, nostrum!</p>
+			</div>
+			<div class="c-3">
+				<h4>Atque, sunt!</h4>
+
+				<p>Aliquid aspernatur aut blanditiis cum et ipsa quos repudiandae sint.</p>
+			</div>
+			<div class="c-3">
+				<h4>Amet, laborum.</h4>
+
+				<p>Commodi dolorem nobis numquam perferendis saepe similique tempora unde voluptatem.</p>
+			</div>
+			<div class="c-3">
+				<h4>Accusantium, velit?</h4>
+
+				<p>Cumque dignissimos harum laboriosam officia placeat quis rerum, vel. Optio.</p>
+			</div>
+		</div>
+	</div>
+
 
 </body>
 </html>
