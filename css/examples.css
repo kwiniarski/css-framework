@@ -202,31 +202,69 @@ th {
 html {
   font: normal 14px "Source Sans Pro", sans-serif;
   color: #000;
+  line-height: 1.4286em;
+  padding-top: 0em;
+  margin: 1.4286em 0 1.4286em;
 /*line-height: em($base-line-height);*/
+}
+p {
+  font-size: 1em;
+  line-height: 1.4286em;
+  padding-top: 0em;
+  margin: 1.4286em 0 1.4286em;
 }
 h1 {
   font-size: 3.5em;
-  margin: 0.4082em auto;
+/*$correction = ceil($size * 1);*/
+  line-height: 1.2245em;
+  padding-top: 0.2245em;
+  margin: 0.4082em 0 0.1837em;
+/*margin: 0;*/
+/*margin: em(20px, $base-size) auto;*/
 }
 h2 {
   font-size: 3em;
-  margin: 0.4762em auto;
+/*$correction = ceil($size * 1);*/
+  line-height: 1.4286em;
+  padding-top: 0.4286em;
+  margin: 0.4762em 0 0.0476em;
+/*margin: 0;*/
+/*margin: em(20px, $base-size) auto;*/
 }
 h3 {
   font-size: 2.5em;
-  margin: 0.5714em auto;
+/*$correction = ceil($size * 1);*/
+  line-height: 1.1429em;
+  padding-top: 0.1429em;
+  margin: 0.5714em 0 0.4286em;
+/*margin: 0;*/
+/*margin: em(20px, $base-size) auto;*/
 }
 h4 {
   font-size: 2em;
-  margin: 0.7143em auto;
+/*$correction = ceil($size * 1);*/
+  line-height: 1.4286em;
+  padding-top: 0.4286em;
+  margin: 0.7143em 0 0.2857em;
+/*margin: 0;*/
+/*margin: em(20px, $base-size) auto;*/
 }
 h5 {
   font-size: 1.5em;
-  margin: 0.9524em auto;
+/*$correction = ceil($size * 1);*/
+  line-height: 1.9048em;
+  padding-top: 0.9048em;
+  margin: 0.9524em 0 0.0476em;
+/*margin: 0;*/
+/*margin: em(20px, $base-size) auto;*/
 }
 h6 {
   font-size: 1em;
-  margin: 1.4286em auto;
+  line-height: 1.4286em;
+  padding-top: 0em;
+  margin: 1.4286em 0 1.4286em;
+/*margin: 0;*/
+/*margin: em(20px, $base-size) auto;*/
 }
 .row {
   width: 1180px;

@@ -18,16 +18,41 @@ $base-font-size-h2 ?= $base-font-size-h3 + $h-size-step;
 $base-font-size-h1 ?= $base-font-size-h2 + $h-size-step;
 
 
+establish-baseline($size = $base-font-size, $base = $base-line-height) {
+	$lh = $base * ceil($size / $base);
+	$diff = $lh - $size;
+
+	if $size > $base-font-size {
+		$correction = $diff;
+		/*$correction = ceil($size * 1);*/
+		p($size, $correction, '---');
+	} else {
+		$correction = 0;
+	}
+	line-height: em($lh, $size);
+	padding-top: em($correction, $size);
+	margin: em($base, $size) 0 em($base - $correction, $size);
+}
+baseline($size = $base-font-size, $base = $base-line-height) {
+	font-size: em($size);
+	establish-baseline($size, $base);
+}
+
 html {
 	font: $base-font-weight $base-font-size $base-font;
 	color: $base-font-color;
+	establish-baseline();
 	/*line-height: em($base-line-height);*/
 }
 
+p {
+	baseline();
+}
 for $h in 1..6 {
 	h{$h} {
-		$base-size = lookup('$base-font-size-h' + $h);
-		font-size: em($base-size);
-		margin: em(20px, $base-size) auto;
+		baseline(lookup('$base-font-size-h' + $h));
+		/*margin: 0;*/
+		/*margin: em(20px, $base-size) auto;*/
 	}
 }
+
