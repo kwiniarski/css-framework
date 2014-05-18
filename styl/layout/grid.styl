@@ -11,7 +11,12 @@ $column-class ?= "column";
 
 // Width of single layout column (cell)
 layout-column() {
-	($layout-width - ($layout-columns - 1) * $layout-gutter) / $layout-columns;
+	$div = $layout-width - ($layout-columns - 1) * $layout-gutter;
+	if ($div % $layout-columns != 0) {
+		error('Grid does not scale');
+	}
+
+	$div / $layout-columns;
 }
 
 // Width of a column of a specified size

@@ -31,6 +31,8 @@ $support-mobile-ie-name ?= "IE Mobile";
 $support-mobile-chrome-name ?= "Chrome for Android";
 $support-mobile-firefox-name ?= "Firefox for Android";
 
+$support-em-precision ?= 8;
+
 unsupported-below($browser, $version) {
 	if current-property {
 		$property = current-property[0];
@@ -53,5 +55,5 @@ prefix-below($browser, $version = 0) {
 }
 
 em($value, $base = $base-font-size) {
-	unit(round(($value / $base), 4), "em");
+	unit(round(($value / $base), $support-em-precision), "em");
 }

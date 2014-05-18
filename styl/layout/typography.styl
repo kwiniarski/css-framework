@@ -6,53 +6,49 @@ $base-font-size ?= 14px;
 $base-font-color ?= #000;
 $base-line-height ?= 20px;
 
-$h-size-factor ?= 3.5;
-$h-size-step ?= round(($base-font-size * $h-size-factor - $base-font-size) / 5);
+$base-font-scale-factor ?= 1.618;
 
 
-$base-font-size-h6 ?= $base-font-size;
-$base-font-size-h5 ?= $base-font-size-h6 + $h-size-step;
-$base-font-size-h4 ?= $base-font-size-h5 + $h-size-step;
-$base-font-size-h3 ?= $base-font-size-h4 + $h-size-step;
-$base-font-size-h2 ?= $base-font-size-h3 + $h-size-step;
-$base-font-size-h1 ?= $base-font-size-h2 + $h-size-step;
 
 
-establish-baseline($size = $base-font-size, $base = $base-line-height) {
-	$lh = $base * ceil($size / $base);
-	$diff = $lh - $size;
-
-	if $size > $base-font-size {
-		$correction = $diff;
-		/*$correction = ceil($size * 1);*/
-		p($size, $correction, '---');
+line-numbers($fs = $base-font-size, $lh = $base-line-height) {
+	ceil($fs / $lh);
+}
+establish-baseline($fs = $base-font-size, $lh = $base-line-height) {
+	$lines = line-numbers($fs, $lh);
+	line-height: em($lh * $lines, $fs);
+	if ($lines > 1) {
+		margin: em($lh * 2, $fs) 0 em($lh, $fs);
 	} else {
-		$correction = 0;
-	}
-	line-height: em($lh, $size);
-	padding-top: em($correction, $size);
-	margin: em($base, $size) 0 em($base - $correction, $size);
-}
-baseline($size = $base-font-size, $base = $base-line-height) {
-	font-size: em($size);
-	establish-baseline($size, $base);
-}
-
-html {
-	font: $base-font-weight $base-font-size $base-font;
-	color: $base-font-color;
-	establish-baseline();
-	/*line-height: em($base-line-height);*/
-}
-
-p {
-	baseline();
-}
-for $h in 1..6 {
-	h{$h} {
-		baseline(lookup('$base-font-size-h' + $h));
-		/*margin: 0;*/
-		/*margin: em(20px, $base-size) auto;*/
+		margin: em($lh, $fs) 0;
 	}
 }
+baseline($fs = $base-font-size, $lh = $base-line-height) {
+	font-size: em($fs);
+	establish-baseline($fs, $lh);
+}
+
+vertical-rhythm($fs = $base-font-size, $lh = $base-line-height) {
+	html {
+		font: $base-font-weight $fs $base-font;
+		color: $base-font-color;
+		line-height: em($lh);
+	}
+	p {
+		baseline();
+	}
+	for $h in 4..1 {
+		if ($hsize is defined) {
+			$hsize = round($hsize * $base-font-scale-factor);
+		} else {
+			$hsize = $fs;
+		}
+		h{$h} {
+			baseline($hsize);
+		}
+	}
+}
+
+
+
 

@@ -2,6 +2,11 @@
 
 $column-class = "c";
 $gutter-class = "s";
+
+$base-font-size = 14px;
+$base-line-height = 20px;
+$base-font-scale-factor ?= 1.5;
+
 $layout-width = 1180px;
 $layout-gutter = 20px;
 /*$layout-gutter = 8;*/
@@ -11,6 +16,7 @@ $base-font = "Source Sans Pro", sans-serif;
 @import "layout"
 
 grid()
+vertical-rhythm()
 
 h1, h2, h3, h4, h5, h5 {
 	font-weight: 100;
